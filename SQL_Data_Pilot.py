@@ -29,7 +29,7 @@ with st.sidebar :
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    clickable_img = get_img_with_href(linkpic_code, 'https://github.com/bouhlalyassine/SQl_Data_Pilot',
+    clickable_img = get_img_with_href(linkpic_code, 'https://github.com/bouhlalyassine/SQL_Data_Pilot',
         170, "blank")
     st.markdown(clickable_img, unsafe_allow_html=True)
 
