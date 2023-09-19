@@ -4,9 +4,7 @@ from settings import *
 from streamlit_lottie import st_lottie
 import streamlit as st
 from streamlit_option_menu import option_menu
-from datetime import date, datetime, timedelta
 import sqlite3
-import io
 
 # streamlit run SQL_Data_Pilot.py
 
@@ -31,12 +29,12 @@ with st.sidebar :
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    clickable_img = get_img_with_href(linkpic_code, 'https://github.com/bouhlalyassine/Analytic_Dashboard',
+    clickable_img = get_img_with_href(linkpic_code, 'https://github.com/bouhlalyassine/SQl_Data_Pilot',
         170, "blank")
     st.markdown(clickable_img, unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
-    
+
     nav_menu = option_menu(menu_title=None, options=['Home', 'Example APP'], 
         default_index=0, orientation="vertical",
         icons=["house", "app"],
