@@ -12,14 +12,13 @@ import plotly.graph_objects as go
 from openpyxl.styles import Font, Color, Fill, PatternFill, Border, Side, numbers, Alignment
 from openpyxl.utils import get_column_letter
 
-TITLE = "SQL Data Pilot"
-PAGE_ICON ="ico_potfolio.ico" #"⚡"
+TITLE = "Datapilot"
+PAGE_ICON ="ico_potfolio.ico"
 
 
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 
 
-# CSS
 css_file = current_dir / "main.css"
 
 
@@ -27,22 +26,18 @@ pp_logo_portfolio = current_dir / "files" /  "logo_portfolio.png"
 linkpic_code = current_dir / "files" /  "code.png"
 
 
-# SQL DB
 sql_db_p = current_dir / "files" / "SQL_DB.db"
 sql_db = str(sql_db_p)
 
 
-# My Tutos :
-# size :
+# My Tuto :
 space = 15
 tuto_space = 70
 
 tuto_sql_db_p = current_dir / "files" / "tuto_sql_db.mp4"
 tuto_sql_db = str(tuto_sql_db_p)
 
-# lotties :
 lottie_sql_db = current_dir / "files" / "sql_db.json"
-
 
 
 def load_lottiefile(filepath : str):
@@ -123,9 +118,7 @@ def curstom_excel_df(excel_file):
             cell.alignment = alignment_left
 
 
-    # modifier la largeur des colonnes :
-    # cf : https://stackoverflow.com/questions/47204711/openpyxl-change-width-of-n-columns
-    for index_col in range(1, max_c+1): # (inclu, exclu)
+    for index_col in range(1, max_c+1):
         i = get_column_letter(index_col)
         ws.column_dimensions[i].width = 13
 
