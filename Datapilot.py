@@ -19,7 +19,7 @@ st.markdown("<h2 style=\
     'text-align : center;\
     font-weight : bold ;\
     font-family : Arial;'>\
-    SQL Data Pilot</h2>", unsafe_allow_html=True)
+    Datapilot</h2>", unsafe_allow_html=True)
 
 st.markdown("""---""")
 
@@ -29,7 +29,7 @@ with st.sidebar :
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    clickable_img = get_img_with_href(linkpic_code, 'https://github.com/bouhlalyassine/SQL_Data_Pilot',
+    clickable_img = get_img_with_href(linkpic_code, 'https://github.com/bouhlalyassine/Datapilot',
         170, "blank")
     st.markdown(clickable_img, unsafe_allow_html=True)
 
@@ -47,7 +47,7 @@ if nav_menu == 'Home':
     st.markdown("<br>", unsafe_allow_html=True)
     colpi1, colpi2 = st.columns([80, 20], gap="small")
     with colpi1:
-        st.info("SQL Data Pilot is a webapp example for navigating and analyzing SQL data.\
+        st.info("Datapilot is a webapp example for navigating and analyzing SQL data.\
                 It consists of two parts :\
                     \n - 1) Creation of a SQL database, allowing users to modify it if needed and extract data in Excel format\
                     \n - 2) Analysis of provided data and creation of a summary PDF report\
