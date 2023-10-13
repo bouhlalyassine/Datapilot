@@ -6,14 +6,10 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import sqlite3
 
-# streamlit run SQL_Data_Pilot.py
+# streamlit run Datapilot.py
 
 st.set_page_config(page_title=TITLE,
-    page_icon=PAGE_ICON,
     layout="wide")
-
-with open(css_file) as f: # Load the CSS file
-    st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
 st.markdown("<h2 style=\
     'text-align : center;\
@@ -24,17 +20,6 @@ st.markdown("<h2 style=\
 st.markdown("""---""")
 
 with st.sidebar :
-    clickable_img_logo = get_img_with_href(pp_logo_portfolio, 'https://ybouhlal.streamlit.app/', 70, "blank")
-    st.markdown(clickable_img_logo, unsafe_allow_html=True)
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    clickable_img = get_img_with_href(linkpic_code, 'https://github.com/bouhlalyassine/Datapilot',
-        170, "blank")
-    st.markdown(clickable_img, unsafe_allow_html=True)
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
     nav_menu = option_menu(menu_title=None, options=['Home', 'Example APP'], 
         default_index=0, orientation="vertical",
         icons=["house", "app"],
@@ -62,14 +47,7 @@ if nav_menu == 'Home':
             loop=True,
             quality="high", # medium ; high ; low
             height=150)
-
-    st.markdown("<br>", unsafe_allow_html=True)
-    esp_1, col_vid_tuto, esp_2 = st.columns([space, tuto_space, space], gap="small")
-    with col_vid_tuto :
-        with open(tuto_sql_db, "rb") as tuto_file:
-            tuto_sql_db_byte = tuto_file.read()
-        st.video(tuto_sql_db_byte)
-
+        
 
 if nav_menu == 'Example APP':
     # st.markdown("<br>", unsafe_allow_html=True)

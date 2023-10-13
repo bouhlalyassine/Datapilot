@@ -13,17 +13,9 @@ from openpyxl.styles import Font, Color, Fill, PatternFill, Border, Side, number
 from openpyxl.utils import get_column_letter
 
 TITLE = "Datapilot"
-PAGE_ICON ="ico_potfolio.ico"
 
 
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-
-
-css_file = current_dir / "main.css"
-
-
-pp_logo_portfolio = current_dir / "files" /  "logo_portfolio.png"
-linkpic_code = current_dir / "files" /  "code.png"
 
 
 sql_db_p = current_dir / "files" / "SQL_DB.db"
@@ -51,21 +43,6 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
-@st.cache_data
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-@st.cache_data
-def get_img_with_href(local_img_path, target_url, width, loc):
-    img_format = os.path.splitext(local_img_path)[-1].replace('.', '')
-    bin_str = get_base64_of_bin_file(local_img_path)
-    html_code = f'''
-        <a href="{target_url}" target="_{loc}" style="display: flex; justify-content: center; align-items: center;">
-            <img src="data:image/{img_format};base64,{bin_str}" width="{width}" class="img-hover-effect">
-        </a>'''
-    return html_code
 
 @st.cache_data
 def curstom_excel_df(excel_file):
