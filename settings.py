@@ -1,7 +1,5 @@
 import json
 from pathlib import Path
-import os
-import base64
 import tempfile
 import requests
 import openpyxl as oxl
